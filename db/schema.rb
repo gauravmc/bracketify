@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613012633) do
+ActiveRecord::Schema.define(version: 20140613213845) do
 
   create_table "users", force: true do |t|
     t.string   "uid"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140613012633) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
+    t.text     "bracket"
   end
 
 end
