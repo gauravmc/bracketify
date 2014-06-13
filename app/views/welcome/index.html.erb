@@ -1,2 +1,5 @@
-<%= current_user.name %><br/>
-<%= current_user.email %>
+<div class="row">
+<% 1.upto(8) do |i| %>
+  <%= render partial: "group", locals: {i: i} %>
+<% end %>
+</div>
