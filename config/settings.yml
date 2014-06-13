@@ -1,0 +1,6 @@
+development: &development
+  GOOGLE_CLIENT_ID: 639442846812-8drik5k04vsmtijr1u7r007fjp5flrj3.apps.googleusercontent.com
+  GOOGLE_CLIENT_SECRET: 0QEiQ84r9UGE4k7SNZuj_3ud
+
+test:
+  <<: *development

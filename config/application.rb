@@ -19,5 +19,14 @@ module Shopifify
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    settings = YAML.load(File.read(File.join(Rails.root, "config/settings.yml")))[Rails.env]
+    if settings.present?
+      config.google_client_id = settings['GOOGLE_CLIENT_ID']
+      config.google_client_secret = settings['GOOGLE_CLIENT_SECRET']
+    else
+      config.google_client_id = ENV['GOOGLE_CLIENT_ID']
+      config.google_client_secret = ENV['GOOGLE_CLIENT_SECRET']
+    end
   end
 end
