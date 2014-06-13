@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -33,6 +32,13 @@ group :development, :test do
   gem 'pry-debugger'
 end
 
+# Use sqlite3 as the database for Active Record
+group :development, :test do
+  gem 'sqlite3'
+end
+
+gem 'pg', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -45,3 +51,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+ruby "2.1.1"
