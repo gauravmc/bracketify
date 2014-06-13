@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  serialize :bracket
+
+  before_create :set_default_bracket
+
   COUNTRIES = [:brazil, :croatia, :mexico, :cameroon,
     :spain, :netherlands, :chile, :australia,
     :colombia, :greece, :ivory_coast, :japan,
@@ -17,6 +21,12 @@ class User < ActiveRecord::Base
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
     end
+  end
+
+  private
+
+  def set_default_bracket
+    self.bracket = default_bracket
   end
 
   def default_bracket

@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test "default_bracket is as expected" do
-    user = User.first
+  test "User gets a default bracket when created" do
+    user = User.new
+    user.save!
+
     expected = [
       [[:brazil, :croatia, :mexico, :cameroon], [:spain, :netherlands, :chile, :australia], [:colombia, :greece, :ivory_coast, :japan], [:england, :italy, :uruguay, :costa_rica], [:france, :ecuador, :switzerland, :honduras], [:argentina, :bosnia, :iran, :nigeria], [:germany, :portugal, :united_states, :ghana], [:belgium, :algeria, :russia, :korea_republic]],
       [:brazil, :netherlands, :colombia, :italy, :france, :bosnia, :germany, :algeria, :croatia, :spain, :greece, :england, :ecuador, :argentina, :portugal, :belgium],
@@ -12,6 +14,6 @@ class UserTest < ActiveSupport::TestCase
       [:portugal]
     ]
 
-    assert_equal expected, user.default_bracket
+    assert_equal expected, user.bracket
   end
 end
