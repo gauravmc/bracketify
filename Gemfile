@@ -54,3 +54,5 @@ gem 'pg', group: :production
 # gem 'debugger', group: [:development, :test]
 
 ruby "2.1.1"
+
+gem 'world-flags'
