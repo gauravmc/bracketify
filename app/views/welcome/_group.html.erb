@@ -2,9 +2,13 @@
   <div class="panel panel-default">
     <div class="panel-heading">Group <%= i %></div>
     <div class="panel-body">
-      <% for country in %w[Brazil Croatia Mexico Cameroon] %>
-      <div><%= country %></div>
-      <% end %>
+      <div class="group-sort">
+        <% for country in %w[Brazil Croatia Mexico Cameroon] %>
+        <div class="group-country">
+          <a class="btn-link"><%= country %></a>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
