@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
       [:brazil, :italy, :france, :germany, :spain, :england, :argentina, :portugal],
       [:brazil, :germany, :england, :portugal],
       [:brazil, :portugal],
-      [:portugal]
+      :portugal
     ]
   end
 

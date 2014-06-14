@@ -11,7 +11,7 @@ class UserTest < ActiveSupport::TestCase
       [:brazil, :italy, :france, :germany, :spain, :england, :argentina, :portugal],
       [:brazil, :germany, :england, :portugal],
       [:brazil, :portugal],
-      [:portugal]
+      :portugal
     ]
 
     assert_equal expected, user.bracket
