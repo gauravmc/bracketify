@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
   get 'bracket/:user_id', to: 'welcome#bracket', as: 'bracket'
 
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update] do
+    member do
+      post :upload_bracket
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

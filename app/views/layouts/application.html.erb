@@ -33,6 +33,22 @@
 </nav>
 
 <div class="container">
+  <% if flash[:error] %>
+    <p class="text-danger">
+      <%= flash[:error] %>
+    </p>
+  <% end %>
+  <% if flash[:success] %>
+    <p class="text-success">
+      <%= flash[:success] %>
+    </p>
+  <% end %>
+  <% if flash[:notice] %>
+    <p class="text-info">
+      <%= flash[:notice] %>
+    </p>
+  <% end %>
+
   <%= yield %>
 </div>
 
