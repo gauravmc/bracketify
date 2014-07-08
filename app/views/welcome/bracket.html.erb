@@ -1,3 +1,9 @@
+<% if current_user.approved? %>
+  <p style="float:right;">Your bracket has been <span class="text-success">approved</span>! Head over to the Leaderboard to see how you rank.</p>
+<% else %>
+  <p style="float:right;">Your bracket approval is <span class="text-info">pending</span>. You'll be a part of the leaderboard once it has been approved.</p>
+<% end %>
+
 <p>Total Points: <b><%= current_user.points %></b></p>
 
 <p>Your Bracket: </p>
