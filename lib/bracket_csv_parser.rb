@@ -27,19 +27,19 @@ class BracketCsvParser
   end
 
   def fetch_1_pointers
-    @bracket[1].concat(Hash[*@csv_array[10][1..8]].values).concat(Hash[*@csv_array[17][1..8]].values)
+    @bracket[1].concat(Hash[*@csv_array[13][1..8]].values).concat(Hash[*@csv_array[20][1..8]].values)
   end
 
   def fetch_2_pointers
-    @bracket[2].concat(Hash[*@csv_array[11][1..8]].values).concat(Hash[*@csv_array[18][1..8]].values)
+    @bracket[2].concat(Hash[*@csv_array[12][1..8]].values).concat(Hash[*@csv_array[19][1..8]].values)
   end
 
   def fetch_4_pointers
-    @bracket[4].concat(Hash[*@csv_array[12][1..8]].values).concat(Hash[*@csv_array[19][1..8]].values)
+    @bracket[4].concat(Hash[*@csv_array[11][1..8]].values).concat(Hash[*@csv_array[18][1..8]].values)
   end
 
   def fetch_8_pointers
-    @bracket[8].concat(Hash[*@csv_array[13][1..8]].values).concat(Hash[*@csv_array[20][1..8]].values)
+    @bracket[8].concat(Hash[*@csv_array[10][1..8]].values).concat(Hash[*@csv_array[17][1..8]].values)
   end
 
   def fetch_15_pointers
