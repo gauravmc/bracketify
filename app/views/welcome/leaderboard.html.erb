@@ -1,35 +1,23 @@
-<% if current_user.admin? %>
-  <% if @users.any? %>
-    <h4>Current projected winner is <b><%= @users.first.name %></b></h4>
-    <div class="row">
-      <table class="table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @users.each do |user| %>
-          <tr>
-            <td><%= image_tag user.image_url %></td>
-            <td><%= user.name %></td>
-            <td><b><%= user.points %></b></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-  <% end %>
-<% else %>
-  <% if current_user.bracket.blank? %>
-  <div class="jumbotron">
-    <h1>Upload Your Bracket</h1>
-    <p>In order to show up on the leaderboard, you'll have to upload your CSV and have it approved.</p>
-    <p><%= link_to "Upload Bracket", bracket_path, class: "btn btn-primary btn-lg" %></p>
+<% if @users.any? %>
+  <h4>Current projected winner is <b><%= @users.first.name %></b></h4>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= image_tag user.image_url %></td>
+          <td><%= user.name %></td>
+          <td><b><%= user.points %></b></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
   </div>
-  <% end %>
-
-  Leaderboard will show up as soon as participants have added their predictions and they have been approved.
 <% end %>

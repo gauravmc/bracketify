@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+  skip_before_action :ensure_user_login, only: :leaderboard
+
   def bracket
     @user = current_user
     redirect_to edit_user_path(@user.id) unless @user.bracket.present?
