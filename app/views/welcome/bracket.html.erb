@@ -51,3 +51,15 @@
     <%= render partial: "match", locals: {bracket: current_user.bracket, index: 7} %>
   </div>
 </div>
+
+<h2>Finals</h2>
+
+<div class="row">
+  <div class="col-xs-6">
+    <%= render partial: "match", locals: {bracket: current_user.bracket, index: 12, teams: ["Brazil", "Argentina"], winner: 1, name: "Champions"} %>
+  </div>
+
+  <div class="col-xs-6">
+    <%= render partial: "match", locals: {bracket: current_user.bracket, index: 12, teams: ["Germany", "Netherlands"], winner: 0, name: "Third Place"} %>
+  </div>
+</div>
