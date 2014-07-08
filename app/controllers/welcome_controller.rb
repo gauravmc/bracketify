@@ -4,5 +4,7 @@ class WelcomeController < ApplicationController
   end
 
   def leaderboard
+    @users = User.where(approved: true)
+    @users = @users.sort_by(&:points).reverse
   end
 end

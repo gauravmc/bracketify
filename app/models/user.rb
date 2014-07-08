@@ -26,6 +26,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def image_url
+    hash = Digest::MD5.hexdigest(email)
+    "http://www.gravatar.com/avatar/#{hash}"
+  end
+
   def save_bracket
     csv = CSV.open(Rails.root.join('public', 'uploads', "#{email.parameterize}.csv"))
     self.bracket = BracketCsvParser.new(csv).bracket
@@ -33,6 +38,12 @@ class User < ActiveRecord::Base
   end
 
   def points
+    @points ||= calculate_points
+  end
+
+  private
+
+  def calculate_points
     if bracket.present?
       points = 0
       points += total_points_for_level(1)
@@ -46,8 +57,6 @@ class User < ActiveRecord::Base
       points
     end
   end
-
-  private
 
   def total_points_for_level(level)
     countries = bracket[level] & FINAL_BRACKET[level]
