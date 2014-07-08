@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  skip_before_action :ensure_user_login, only: :leaderboard
+  skip_before_action :ensure_user_login, only: [:leaderboard, :current_bracket]
 
   def bracket
     @user = current_user
