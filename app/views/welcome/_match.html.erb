@@ -8,9 +8,9 @@
     <div class="panel-heading"><%= name %></div>
     <div class="panel-body">
       <div class="group-sort">
-        <% teams.each_with_index do |team, i| %>
+        <% teams.each do |team| %>
           <div class="group-country">
-            <%= team_with_flag(team, winner == i) %>
+            <%= team_with_flag(team, winner == team) %>
             <div class="clearfix"></div>
           </div>
         <% end %>

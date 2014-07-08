@@ -1,0 +1,51 @@
+<h2>Groups</h2>
+
+<div class="row">
+  <% get_groups_from_bracket(bracket).each do |group, teams| %>
+    <%= render partial: "group", locals: {group: group, teams: teams} %>
+  <% end %>
+</div>
+
+<h2>Knockout Stage</h2>
+
+<div class="row">
+  <div class="col-xs-2">
+    <%= render partial: "match", locals: {index: 0, teams: [bracket[8][0], bracket[4][1]], winner: bracket[15][0], name: "Round 16"} %>
+    <%= render partial: "match", locals: {index: 1, teams: [bracket[8][2], bracket[4][3]], winner: bracket[15][2], name: "Round 16"} %>
+    <%= render partial: "match", locals: {index: 2, teams: [bracket[8][4], bracket[4][5]], winner: bracket[15][4], name: "Round 16"} %>
+    <%= render partial: "match", locals: {index: 3, teams: [bracket[8][6], bracket[4][7]], winner: bracket[15][6], name: "Round 16"} %>
+  </div>
+
+  <div class="col-xs-2" style="margin-top: 100px;">
+    <%= render partial: "match", locals: {index: 8, teams: [bracket[15][0], bracket[15][2]], winner: bracket[30][0], name: "Quarter Finals"} %>
+    <%= render partial: "match", locals: {index: 9, teams: [bracket[15][4], bracket[15][6]], winner: bracket[30][2], name: "Quarter Finals"} %>
+  </div>
+
+  <div class="col-xs-2" style="margin-top: 200px;">
+    <%= render partial: "match", locals: {index: 12, teams: [bracket[30][0], bracket[30][2]], winner: bracket[50][0], name: "Semi Finals"} %>
+  </div>
+
+  <div class="col-xs-2" style="margin-top: 200px;">
+    <%= render partial: "match", locals: {index: 13, teams: [bracket[30][1], bracket[30][3]], winner: bracket[50][1], name: "Semi Finals"} %>
+  </div>
+
+  <div class="col-xs-2" style="margin-top: 100px;">
+    <%= render partial: "match", locals: {index: 10, teams: [bracket[15][1], bracket[15][3]], winner: bracket[30][1], name: "Quarter Finals"} %>
+    <%= render partial: "match", locals: {index: 11, teams: [bracket[15][5], bracket[15][7]], winner: bracket[30][3], name: "Quarter Finals"} %>
+  </div>
+
+  <div class="col-xs-2">
+    <%= render partial: "match", locals: {index: 0, teams: [bracket[8][1], bracket[4][0]], winner: bracket[15][1], name: "Round 16"} %>
+    <%= render partial: "match", locals: {index: 1, teams: [bracket[8][3], bracket[4][2]], winner: bracket[15][3], name: "Round 16"} %>
+    <%= render partial: "match", locals: {index: 2, teams: [bracket[8][5], bracket[4][4]], winner: bracket[15][5], name: "Round 16"} %>
+    <%= render partial: "match", locals: {index: 3, teams: [bracket[8][7], bracket[4][6]], winner: bracket[15][7], name: "Round 16"} %>
+  </div>
+</div>
+
+<h2>Finals</h2>
+
+<div class="row">
+  <div class="col-xs-6">
+    <%= render partial: "match", locals: {index: 12, teams: [bracket[50][0], bracket[50][1]], winner: bracket[100][0], name: "Champions"} %>
+  </div>
+</div>
