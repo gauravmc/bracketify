@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def bracket
-    @user = User.find params[:user_id]
+    @user = current_user
+    redirect_to edit_user_path(@user.id) unless @user.bracket.present?
   end
 
   def leaderboard

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'auth/failure', to: 'sessions#failure', as: 'login_failure'
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
-  get 'bracket/:user_id', to: 'welcome#bracket', as: 'bracket'
+  get 'bracket', to: 'welcome#bracket', as: 'bracket'
 
   resources :users, only: [:index, :edit, :update] do
     member do

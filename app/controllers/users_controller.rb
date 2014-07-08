@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       end
       current_user.save_bracket
 
-      redirect_to bracket_path(current_user), flash: { success: "Your bracket predictions have been added successfully." }
+      redirect_to bracket_path, flash: { success: "Your bracket predictions have been added successfully." }
     else
       redirect_to edit_user_path(current_user), flash: { error: "No .csv file found. Please try again." }
     end
