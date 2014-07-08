@@ -1,14 +1,13 @@
 <div class="col-xs-3">
   <div class="panel panel-default">
-    <div class="panel-heading">Group <%= i %></div>
+    <div class="panel-heading">Group <%= group %></div>
     <div class="panel-body">
       <div class="group-sort">
-        <% for country in %w[Brazil Croatia Mexico Cameroon] %>
-        <div class="group-country">
-          <ul class="flags f32 pull-left"><li class="flag ar"></li></ul>
-          <a class="btn-link"><%= country %></a>
-          <div class="clearfix"></div>
-        </div>
+        <% teams.each do |team| %>
+          <div class="group-country">
+            <ul class="flags f32 pull-left"><li class="flag <%= country_code(team) %>" data-country_name="<%= team %>" style="margin-top: -5px;"></li></ul>&nbsp;&nbsp;<%= team %>
+            <div class="clearfix"></div>
+          </div>
         <% end %>
       </div>
     </div>

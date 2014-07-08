@@ -1,6 +1,8 @@
 <p>Total Points: <b><%= current_user.points %></b></p>
+
+<p>Your Bracket: </p>
 <div class="row">
-<% 1.upto(8) do |i| %>
-  <%= render partial: "group", locals: {i: i} %>
-<% end %>
+  <% get_groups_from_bracket(current_user.bracket).each do |group, teams| %>
+    <%= render partial: "group", locals: {group: group, teams: teams} %>
+  <% end %>
 </div>
