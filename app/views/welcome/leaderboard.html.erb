@@ -1,25 +1,27 @@
 <% if current_user.admin? %>
-<h4>Current projected winner is <b><%= @users.first.name %></b></h4>
-<div class="row">
-  <table class="table">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Points</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= image_tag user.image_url %></td>
-        <td><%= user.name %></td>
-        <td><b><%= user.points %></b></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-</div>
+  <% if @users.any? %>
+    <h4>Current projected winner is <b><%= @users.first.name %></b></h4>
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= image_tag user.image_url %></td>
+            <td><%= user.name %></td>
+            <td><b><%= user.points %></b></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
 <% else %>
   Leaderboard will show up as soon as participants have added their predictions and they have been approved.
 <% end %>
