@@ -47,6 +47,14 @@ module UsersHelper
     }
   end
 
+  def team_with_flag(name)
+    if country_code(name)
+      "<ul class=\"flags f32 pull-left\"><li class=\"flag #{country_code(name)}\" data-country_name=\"#{name}\" style=\"margin-top: -5px;\"></li></ul>&nbsp;&nbsp;#{name}".html_safe
+    else
+      "<ul class=\"flags f32 pull-left\"><li>#{name}</li></ul>".html_safe
+    end
+  end
+
   def country_code(name)
     COUNTRY_CODES.key(name)
   end
