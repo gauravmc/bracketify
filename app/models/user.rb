@@ -1,3 +1,6 @@
+require 'csv'
+require 'bracket_csv_parser'
+
 class User < ActiveRecord::Base
   serialize :bracket
 
@@ -19,5 +22,11 @@ class User < ActiveRecord::Base
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
     end
+  end
+
+  def save_bracket
+    csv = CSV.open(Rails.root.join('public', 'uploads', "#{email.parameterize}.csv"))
+    self.bracket = BracketCsvParser.new(csv).bracket
+    save
   end
 end

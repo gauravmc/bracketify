@@ -20,6 +20,8 @@ module Bracketify
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.autoload_paths << Rails.root.join('lib')
+
     settings = YAML.load(File.read(File.join(Rails.root, "config/settings.yml")))[Rails.env]
     if settings.present?
       config.google_client_id = settings['GOOGLE_CLIENT_ID']

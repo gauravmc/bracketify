@@ -1,0 +1,38 @@
+Make sure to copy this document to your own drive,,,,,,,,,
+Instructions,,,,,,,,,
+1. Click File -> Make a Copy...,,,,,,,,,
+"2. Enter your predictions for the first round in the ""Your Predictions"" column.",,,,,,,,,
+3. This will automatically seed the first round of the knockout stage. You have to type in your winners from this point to the championship.,,,,,,,,,
+"4. When you're ready, click File -> Download As -> Comma-seperated values (.csv)",,,,,,,,,
+5. Email the downloaded file to gaurav@shopify.com,,,,,,,,,
+,,,,,,,,,
+Group Stage,Group A,,Group B,,Group C,,Group D,,
+"Fill in ""Your Predictions"" with the order you think each group will end up with.",Default,Your Predictions,Default,Your Predictions,Default,Your Predictions,Default,Your Predictions,
+,Brazil,Brazil,Spain,Spain,Columbia,Columbia,Uruguay,Italy,8 points
+,Croatia,Croatia,Netherlands,Netherlands,Greece,Ivory Coast,Costa Rica,England,4 points
+,Mexico,Mexico,Chile,Chile,Ivory Coast,Japan,England,Uruguay,2 points
+,Cameroon,Cameroon,Australia,Australia,Japan,Greece,Italy,Costa Rica,1 point
+,,,,,,,,,
+,Group E,,Group F,,Group G,,Group H,,
+,Default,Your Predictions,Default,Your Predictions,Default,Your Predictions,Default,Your Predictions,
+,Switzerland,France,Argentina,Argentina,Germany,Germany,Belgium,Belgium,8 points
+,Ecuador,Ecuador,Bosnia,Nigeria,Portugal,Portugal,Algeria,Korea Republic,4 points
+,France,Switzerland,Iran,Bosnia,Ghana,United States,Russia,Russia,2 points
+,Honduras,Honduras,Nigeria,Iran,United States,Ghana,Korea Republic,Algeria,1 point
+,,,,,,,,,
+Knockout Stage,,15 Points,30 Points,50 Points,100 Points,50 Points,30 Points,15 Points,
+First round filled automatically based on your picks above.,Brazil,,,,Champions!,,,,Croatia
+,,Brazil,,,,,,Spain,
+,Netherlands,,,,,,,,Spain
+,,,Brazil,,,,Spain,,
+,Columbia,,,,,,,,Ivory Coast
+,,Columbia,,,,,,Italy,
+,England,,,,,,,,Italy
+,,,,Germany,Argentina,Argentina,,,
+,France,,,,,,,,Ecuador
+,,France,,,,,,Argentina,
+,Nigeria,,,,,,,,Argentina
+,,,Germany,,,,Argentina,,
+,Germany,,,,,,,,Portugal
+,,Germany,,,,,,Portugal,
+,Korea Republic,,,,,,,,Belgium

@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       File.open(Rails.root.join('public', 'uploads', "#{current_user.email.parameterize}.csv"), 'wb') do |file|
         file.write(uploaded_io.read)
       end
+      current_user.save_bracket
 
       redirect_to bracket_path(current_user), flash: { success: "Your bracket predictions have been added successfully." }
     else
