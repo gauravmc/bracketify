@@ -6,7 +6,13 @@
   <% end %>
 </div>
 
-<h2>Knockout Stage</h2>
+<h2>Finals</h2>
+
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4">
+    <%= render partial: "match", locals: {index: 12, teams: [bracket[50][0], bracket[50][1]], winner: bracket[100][0], name: "Champions"} %>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-xs-2">
@@ -39,13 +45,5 @@
     <%= render partial: "match", locals: {index: 1, teams: [bracket[8][3], bracket[4][2]], winner: bracket[15][3], name: "Round 16"} %>
     <%= render partial: "match", locals: {index: 2, teams: [bracket[8][5], bracket[4][4]], winner: bracket[15][5], name: "Round 16"} %>
     <%= render partial: "match", locals: {index: 3, teams: [bracket[8][7], bracket[4][6]], winner: bracket[15][7], name: "Round 16"} %>
-  </div>
-</div>
-
-<h2>Finals</h2>
-
-<div class="row">
-  <div class="col-xs-6">
-    <%= render partial: "match", locals: {index: 12, teams: [bracket[50][0], bracket[50][1]], winner: bracket[100][0], name: "Champions"} %>
   </div>
 </div>
