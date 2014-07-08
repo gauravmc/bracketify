@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
+  def ensure_user_is_admin
+    redirect_to(root_path, flash: {notice: "You're not an administrator."}) unless current_user.admin?
+  end
 end

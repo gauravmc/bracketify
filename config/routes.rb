@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
   get 'bracket/:user_id', to: 'welcome#bracket', as: 'bracket'
 
-  resources :users, only: [:edit, :update] do
+  resources :users, only: [:index, :edit, :update] do
     member do
       post :upload_bracket
+      put :approve
     end
   end
 
