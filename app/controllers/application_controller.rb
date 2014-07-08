@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_user_is_admin
-    redirect_to(root_path, flash: {notice: "You're not an administrator."}) unless current_user.admin?
+    redirect_to(root_path, flash: {notice: "You're not an administrator."}) unless current_user && current_user.admin?
   end
 end
