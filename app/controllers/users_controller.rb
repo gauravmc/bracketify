@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    redirect_to bracket_path, flash: {error: "Cannot reupload the bracket once it has been approved. Contact the admin if there's a problem with your bracket."} if current_user.approved?
   end
 
   def upload_bracket
