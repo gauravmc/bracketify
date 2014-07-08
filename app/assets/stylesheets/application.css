@@ -15,3 +15,7 @@
  *= require flags/basic
  *= require flags/flags32
  */
+
+.finals-col .panel-body {
+  font-size: 0.8em;
+}
