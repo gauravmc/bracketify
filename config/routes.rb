@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   get 'bracket', to: 'welcome#bracket', as: 'bracket'
+  get 'current_bracket', to: 'welcome#current_bracket'
 
   resources :users, only: [:index, :edit, :update] do
     member do

@@ -1,0 +1,6 @@
+<p>World Cup 2014 (as it has happened):</p>
+<div class="row">
+  <% get_groups_from_bracket(@bracket).each do |group, teams| %>
+    <%= render partial: "group", locals: {group: group, teams: teams} %>
+  <% end %>
+</div>
