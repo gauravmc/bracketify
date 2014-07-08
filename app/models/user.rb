@@ -4,14 +4,16 @@ require 'bracket_csv_parser'
 class User < ActiveRecord::Base
   serialize :bracket
 
-  COUNTRIES = [:brazil, :croatia, :mexico, :cameroon,
-    :spain, :netherlands, :chile, :australia,
-    :colombia, :greece, :ivory_coast, :japan,
-    :england, :italy, :uruguay, :costa_rica,
-    :france, :ecuador, :switzerland, :honduras,
-    :argentina, :bosnia, :iran, :nigeria,
-    :germany, :portugal, :united_states, :ghana,
-    :belgium, :algeria, :russia, :korea_republic]
+  FINAL_BRACKET = {
+    1 => ["Cameroon", "Australia", "Japan", "England", "Honduras", "Iran", "Ghana", "Korea Republic"],
+    2 => ["Croatia", "Spain", "Ivory Coast", "Italy", "Ecuador", "Bosnia", "Portugal", "Russia"],
+    4 => ["Mexico", "Chile", "Greece", "Uruguay", "Switzerland", "Nigeria", "United States", "Algeria"],
+    8 => ["Brazil", "Netherlands", "Columbia", "Costa Rica", "France", "Argentina", "Germany", "Belgium"],
+    15 => ["Brazil", "Netherlands", "Columbia", "Coast Rica", "France", "Argentina", "Germany", "Belgium"],
+    30 => ["Brazil", "Netherlands", "Germany", "Argentina"],
+    50 => [],
+    100 => []
+  }
 
   def self.from_omniauth(auth)
     where(auth.slice(:uid)).first_or_initialize.tap do |user|
@@ -28,5 +30,27 @@ class User < ActiveRecord::Base
     csv = CSV.open(Rails.root.join('public', 'uploads', "#{email.parameterize}.csv"))
     self.bracket = BracketCsvParser.new(csv).bracket
     save
+  end
+
+  def points
+    if bracket.present?
+      points = 0
+      points += total_points_for_level(1)
+      points += total_points_for_level(2)
+      points += total_points_for_level(4)
+      points += total_points_for_level(8)
+      points += total_points_for_level(15)
+      points += total_points_for_level(30)
+      points += total_points_for_level(50)
+      points += total_points_for_level(100)
+      points
+    end
+  end
+
+  private
+
+  def total_points_for_level(level)
+    countries = bracket[level] & FINAL_BRACKET[level]
+    countries.size * level
   end
 end
