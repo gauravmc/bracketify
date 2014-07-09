@@ -1,4 +1,4 @@
-<h2>Groups</h2>
+<h2>Group Stage</h2>
 
 <div class="row">
   <% get_groups_from_bracket(bracket).each do |group, teams| %>
@@ -6,11 +6,11 @@
   <% end %>
 </div>
 
-<h2>Finals</h2>
+<h2>Knockout Stage</h2>
 
 <div class="row">
   <div class="col-xs-4 col-xs-offset-4">
-    <%= render partial: "match", locals: {index: 12, teams: [bracket[50][0], bracket[50][1]], winner: bracket[100][0], name: "Champions"} %>
+    <%= render partial: "match", locals: {index: 12, teams: [bracket[50][0], bracket[50][1]], winner: bracket[100][0], name: "Finals"} %>
   </div>
 </div>
 

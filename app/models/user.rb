@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
     8 => ["Brazil", "Netherlands", "Columbia", "Costa Rica", "France", "Argentina", "Germany", "Belgium"],
     15 => ["Brazil", "Netherlands", "Columbia", "Coast Rica", "France", "Argentina", "Germany", "Belgium"],
     30 => ["Brazil", "Netherlands", "Germany", "Argentina"],
-    50 => [],
+    50 => ["Germany"],
     100 => []
   }
 
