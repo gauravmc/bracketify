@@ -7,14 +7,16 @@
           <th></th>
           <th>Name</th>
           <th>Points</th>
+          <th>Total Correct Predictions</th>
         </tr>
       </thead>
       <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= image_tag user.image_url %></td>
-          <td><%= user.name %></td>
-          <td><b><%= user.points %></b></td>
+          <td width="20%"><%= image_tag user.image_url %></td>
+          <td width="30%"><%= user.name %></td>
+          <td width="30%"><b><%= user.points %></b></td>
+          <td><%= user.correct_predictions %></td>
         </tr>
       <% end %>
       </tbody>

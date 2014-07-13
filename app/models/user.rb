@@ -2,6 +2,7 @@ require 'csv'
 require 'bracket_csv_parser'
 
 class User < ActiveRecord::Base
+  attr_reader :correct_predictions
   serialize :bracket
 
   FINAL_BRACKET = {
@@ -46,6 +47,7 @@ class User < ActiveRecord::Base
   def calculate_points
     if bracket.present?
       points = 0
+      @correct_predictions = 0
       points += total_points_for_level(1)
       points += total_points_for_level(2)
       points += total_points_for_level(4)
@@ -60,6 +62,7 @@ class User < ActiveRecord::Base
 
   def total_points_for_level(level)
     countries = bracket[level] & FINAL_BRACKET[level]
+    @correct_predictions += countries.size
     countries.size * level
   end
 end
