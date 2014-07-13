@@ -15,6 +15,6 @@ class UserTest < ActiveSupport::TestCase
     }
     user.save
 
-    assert_equal 226, user.points
+    assert_equal 326, user.points
   end
 end

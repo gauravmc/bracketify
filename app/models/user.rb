@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     15 => ["Brazil", "Netherlands", "Columbia", "Coast Rica", "France", "Argentina", "Germany", "Belgium"],
     30 => ["Brazil", "Netherlands", "Germany", "Argentina"],
     50 => ["Germany", "Argentina"],
-    100 => []
+    100 => ["Germany"]
   }
 
   def self.from_omniauth(auth)
