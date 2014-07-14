@@ -18,7 +18,7 @@
           <td width="20%"><%= user.name %></td>
           <td width="30%"><b><%= user.points %></b></td>
           <td><%= user.correct_predictions %></td>
-          <td><%= link_to 'View Bracket', bracket_user_path(user), class: 'btn' %></td>
+          <td><%= link_to 'View Bracket', bracket_user_path(user) %></td>
         </tr>
       <% end %>
       </tbody>
