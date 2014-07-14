@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :ensure_user_is_admin, only: [:index, :approve]
+  skip_before_action :ensure_user_login, only: :bracket
 
   def index
     @users = User.all
@@ -30,5 +31,9 @@ class UsersController < ApplicationController
     user.save
 
     redirect_to users_path, flash: {success: "Users #{user.name}'s bracket has been approved."}
+  end
+
+  def bracket
+    @user = User.find params[:id]
   end
 end

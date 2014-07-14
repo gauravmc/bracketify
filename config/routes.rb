@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     member do
       post :upload_bracket
       put :approve
+      get :bracket
     end
   end
 
