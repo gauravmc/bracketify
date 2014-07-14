@@ -1,3 +1,4 @@
-<h1>Points: <b><%= @user.points %></b></h1>
+<h2><%= @user.name %>'s Bracket <span style="float:right;">Points: <b><%= @user.points %></span></b></h2>
+<hr>
 
 <%= render partial: 'welcome/bracket_table', locals: {bracket: @user.bracket} %>
